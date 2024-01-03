@@ -1,0 +1,61 @@
+table,th,td{
+    padding: 10px;
+    margin: auto;
+    width:50%;
+    text-align: center;
+    /*height: 800px;*/
+    background-color: rgb(250,250,150);
+    border-radius: 20px;
+}
+#outer{
+    /*border: 1px solid yellow;*/
+    /*border-radius: 20px;*/
+}
+.custom-center{
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto
+}
+#top1{
+    position: static;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 3vw;
+    background-color: rgb(200,250,250);
+    font-weight: bold;
+    border-radius: 15px;
+}
+.lc{
+    width: 30%;
+    text-align: right;
+}
+.lr{
+    width: 70%;
+    text-align: left;
+}
+.txtin{width:90%;}
+.myFont1{font-family: bookman old style;}
+
+.align-center-grp{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly
+}
+
+.myFont1{
+	font-family: bookman old style;
+}
+.myFontH1{
+	font-family: bookman old style;
+	font-size: 20px;
+}
+.ui.modal.visible.active{
+    height: auto ;
+    display: flex;
+}
+
+.dimmed.dimmable{
+    /* display: flex !important; */
+  }
