@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import AddRowsComponent from '../components/AddRowsComponent';
 
-export default function SignUpComponent(props) {
-    const navigate = useNavigate();
+export default function SignUpPage(props) {
+    const navigate = props.navigate;
     const handleSignIn = () => {
         navigate("/signin");
     }
@@ -85,14 +83,14 @@ export default function SignUpComponent(props) {
             var isEmailInUse = false;
             if (usersList && usersList.length > 0) {
                 for (let i = 0; i < usersList.length; i++) {
-                    if (em == usersList[i].Email) {
+                    if (em === usersList[i].Email) {
                         alert("Email already Exists , use another");
                         isEmailInUse = true;
                         break;
                     }
                 }
             }
-            if (isEmailInUse != true)
+            if (isEmailInUse !== true)
                 registerUser();
         }
     }

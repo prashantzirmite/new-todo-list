@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 function TableRowComponent(props) {
     const label = props.rowLabel ? props.rowLabel : "";

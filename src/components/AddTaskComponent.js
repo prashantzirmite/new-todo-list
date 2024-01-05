@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Modal } from 'semantic-ui-react'
-import _ from 'lodash'
 
 function AddTaskComponent(props) {
 
@@ -11,14 +10,6 @@ function AddTaskComponent(props) {
 
     }
     
-    // useEffect(() => {
-    //     var taskTemp = JSON.parse(localStorage.getItem("Tasks"));
-    //     setAllTasks(taskTemp);
-    //     if (!_.isEmpty(allTasks)) {
-    //         debugger
-    //         localStorage.setItem("Tasks", JSON.stringify(allTasks));
-    //     }
-    // })
     const handleAddTask = () => {
         var currentUser = JSON.parse(localStorage.getItem("CurrentUser"));
         var taskTemp = JSON.parse(localStorage.getItem("Tasks"))

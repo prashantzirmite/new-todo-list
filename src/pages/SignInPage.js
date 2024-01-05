@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import './pageStyles.css';
 import TableRowComponent from '../components/TableRowComponent';
-import { useNavigate } from 'react-router-dom';
 import _ from 'lodash'
 
-function SignInComponent(props) {
-    const navigate = useNavigate();
+function SignInPage(props) {
+    const navigate = props.navigate;
     const handleSignUp = () => {
         navigate("/signup");
     }
@@ -56,7 +55,7 @@ function SignInComponent(props) {
             }
         }
         else {
-            if(userName!="")
+            if(userName!=="")
             alert("Username is not present SignUp now..!");
         }
     }
@@ -124,4 +123,4 @@ function SignInComponent(props) {
     )
 }
 
-export default SignInComponent
+export default SignInPage

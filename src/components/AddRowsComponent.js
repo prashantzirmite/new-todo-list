@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import TableRowComponent from './TableRowComponent'
 
 function AddRowsComponent(props) {

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import './pageStyles.css';
 import { Bars } from 'react-loader-spinner';
-import { useNavigate } from 'react-router-dom'
 import AddTaskComponent from '../components/AddTaskComponent';
 import { Input } from 'semantic-ui-react';
 import _ from 'lodash';
@@ -11,7 +10,7 @@ import _ from 'lodash';
 function ToDoListPage(props) {
     const [isAddingTask, setIsAddingtask] = useState(false);
     const [displayTasksOfUser, setDisplayTasksOfUser] = useState(true);
-    const navigate = useNavigate();
+    const navigate = props.navigate;
     useEffect(() => {
         if (!props.isLoggedIn) {
             navigate('/signin');
@@ -46,7 +45,7 @@ function ToDoListPage(props) {
         let tempAllTasks = JSON.parse(localStorage.getItem('Tasks'));
         let index = _.findIndex(tempAllTasks, ["Task", task.Task]);
         if (index > -1) {
-            if (tempAllTasks[index].Status == "Pending")
+            if (tempAllTasks[index].Status === "Pending")
                 tempAllTasks[index].Status = "Complete"
             else
                 tempAllTasks[index].Status = "Pending"
@@ -79,7 +78,7 @@ function ToDoListPage(props) {
                         <tbody>
                             {
                                 tasks.map(task => {
-                                    if (currentUser.Email == task.User) {
+                                    if (currentUser.Email === task.User) {
                                         return (
                                             <tr>
                                                 <td> {task.Task} </td>
@@ -89,6 +88,8 @@ function ToDoListPage(props) {
                                                 <td><Input id='del' type='button' value='Delete' onClick={(e) => { taskDelete(e, { task }) }} /></td>
                                             </tr>
                                         )
+                                    }else{
+                                        return <></>
                                     }
                                 })
                             }
